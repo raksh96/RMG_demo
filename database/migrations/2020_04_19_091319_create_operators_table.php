@@ -16,8 +16,8 @@ class CreateOperatorsTable extends Migration
         Schema::create('operators', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('section');
-            $table->string('machine');
+            $table->integer('section_id');
+            $table->integer('machine_id');
             $table->timestamps();
         });
     }

@@ -46,16 +46,13 @@ class DashboardController extends Controller
     public function knittinginspection(){
         $machines = Machines::with('sections')->get();
         $sections1 = Sections::all();
-         echo '<pre>';
+         /* echo '<pre>';
         print_r($machines);
         echo '</pre>';
-        die(); 
+        die();  */
         return view('admin.knitting-inspection', compact('machines', 'sections1'));
     }
-    public function knittingsection(){
-        
-        return view('admin.knitting-section');
-    }
+    
     public function knittingquality(){
         
         return view('admin.knitting-quality');
@@ -127,6 +124,11 @@ class DashboardController extends Controller
 
         return redirect('knitting')->with('status', 'Data deleted for Section');
 
+    }
+    public function ope(){
+        
+        return view('admin.operators');
+    
     }
     
     

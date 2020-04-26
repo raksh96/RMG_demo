@@ -32,7 +32,7 @@
                 <label for="recipient-name" class="col-form-label">Section name</label>
                 <select name="sec" class="form-control" id="sec">
                   <option value="">Choose section</option>
-                  <?php foreach($sections as $item){?>
+                  <?php foreach($sections1 as $item){?>
                   <option value="<?php echo $item->id;?>"><?php echo $item->section_name;?></option>
                   
                 
@@ -100,7 +100,7 @@
                   <td>{{ $data->brand }}
                   </td> 
                   
-                  <td>{{ $data->$sections1->section_name }}
+                  <td>{{ $data->sections['section_name'] }}
                   </td> 
                   
                   <td><a href="#" class="btn btn-success">EDIT</a></td>

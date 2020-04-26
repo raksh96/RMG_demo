@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Sections extends Model
 {
     protected $table = 'sections';
-    protected $fillable = ['section_name'];
-    public function machine(){
-        return $this->belongsTo('App\Machines', 'id');
+    //protected $fillable = ['section_name'];
+    public function operator(){
+        return $this->hasMany('App\Models\Operators');
     }
+    public function machine(){
+        return $this->hasMany('App\Models\Machines');
+    }
+    
+    
 }

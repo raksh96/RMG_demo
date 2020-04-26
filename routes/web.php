@@ -32,14 +32,14 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/yarn-store', 'Admin\DashboardController@yarnstore');
     
     
-    Route::get('/knitting-section', 'Admin\DashboardController@knittingsection');
+    Route::get('/knitting-section', 'Admin\OperatorsController@knittingsection');
     Route::get('/knitting-quality', 'Admin\DashboardController@knittingquality');
     
     Route::get('/linking', 'Admin\DashboardController@linking');
     Route::get('/mending', 'Admin\DashboardController@mending');
 
 
-    Route::get('/operators', 'Admin\OperatorsController@operators');
+    Route::get('/operators', 'Admin\DashboardController@ope');
     Route::get('/save-operators', 'Admin\OperatorsController@saveoperators');
     Route::get('join-table', 'JoinTableController@index
     ');
@@ -58,6 +58,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/section/{id}', 'Admin\DashboardController@edit');
     Route::get('/section-update/{id}', 'Admin\DashboardController@update');
     Route::delete('section-delete/{id}', 'Admin\DashboardController@delete');
+
+
+    Route::get('/accessories-inventory', 'Admin\FormController@accessoriesinventory');
     
 
 });
